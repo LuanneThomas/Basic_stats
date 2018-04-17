@@ -137,7 +137,7 @@ sa_time <- sa_time %>%
 
 #long data 
 sa_long <- sa_time %>% 
-  gather(key = "time_type", value = "minutes", -human)
+  gather(key = "time_type", value = "minutes", -human, -geo)
 
 #minus function excludes coloumn 
 
@@ -264,11 +264,4 @@ ggplot(data = sa_time,aes(y = now_now, x = just_now)) +
 
 #lm = linear model
 #grey shade in graph shows significant relationships 
-
-
-
-
-
-
-
 
