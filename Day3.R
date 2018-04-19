@@ -325,4 +325,3 @@ t.test(value ~ site, data = ecklonia_sub, var.equal = TRUE, alternative = "great
 
 compare_means(value ~ site, data = ecklonia_sub, method = "t.test", var.equal = TRUE, alternative = "greater")
 
-
