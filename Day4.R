@@ -10,8 +10,6 @@
 
 library(tidyverse)
 
-library(ggplot2)
-
 chicks <- as_tibble(ChickWeight)
 
 chicks_sub <- chicks %>% 
@@ -87,7 +85,7 @@ chicks_0_21 <- ChickWeight %>%
   filter(Time %in% c(0, 2, 21))
 
 #visualise the data
-ggplot(data = chicks_0_21, aes(x = Time , y = weight)) +
+ggplot(data = chicks_0_21, aes(x = as.factor(Time), y = weight)) +
   geom_boxplot(notch = TRUE, aes(fill = as.factor(Time)))
 
 #Run ANOVA
