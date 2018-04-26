@@ -19,15 +19,11 @@ feed_3 <- c(102.6, 102.1, 100.2, 96.5)
 feed_4 <- c(87.9, 84.2, 83.1, 85.7, 90.3)
 
 # make a dataframe
-bacon <- as.tibble(data.frame(
-  feed = c(
-    rep("Feed 1", length(feed_1)),
+bacon <- as.tibble(data.frame(feed = c(rep("Feed 1", length(feed_1)),
     rep("Feed 2", length(feed_2)),
     rep("Feed 3", length(feed_3)),
-    rep("Feed 4", length(feed_4))
-  ),
-  mass = c(feed_1, feed_2, feed_3, feed_4)
-))
+    rep("Feed 4", length(feed_4))),
+  mass = c(feed_1, feed_2, feed_3, feed_4)))
 
 #One-way 
 
