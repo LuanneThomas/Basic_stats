@@ -6,9 +6,8 @@
 # Load Libraries ----------------------------------------------------------
 
 library(tidyverse)
-library(Rmisc)
+# library(Rmisc) # Unfortunately this overrides many dplyr functions
 library(ggpubr)
-library(tidyr)
 
 # Load data  --------------------------------------------------------------
 
@@ -38,7 +37,7 @@ snakes.summary <- snakes %>%
 
 #another way
 
-snakes.summary2 <- summarySE(data = snakes,
+snakes.summary2 <- Rmisc::summarySE(data = snakes,
                              measurevar = "openings",
                              groupvars = c("day"))
 
@@ -108,7 +107,7 @@ plot(snakes.tukey)
 
 ggplot(data = snakes, aes(x = as.numeric(day), 
                           y = openings, 
-                          colour = snakes)) +
+                          colour = snake)) +
          geom_line(size = 3) +
          geom_point(size = 4)
 
@@ -146,7 +145,7 @@ plot(moth.tukey)
 
 #visualisation
 
-moth.summary <- summarySE(data = moths,
+moth.summary <- Rmisc::summarySE(data = moths,
                              measurevar = "count",
                              groupvars = c("trap"))
 
